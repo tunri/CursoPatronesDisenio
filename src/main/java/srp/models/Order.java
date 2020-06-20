@@ -34,6 +34,19 @@ public class Order {
         return totalPrice;
     }
 
+    // Solucion 3
+    public Double getTotalTax() {
+        List<IOrderItem> ordersItems = this.getOrderItems();
+
+        Double totalPrice = 0.0;
+
+        for (IOrderItem item : ordersItems) {
+            totalPrice += item.getTaxItem(item.price);
+        }
+
+        return totalPrice;
+    }
+
 
     public Double getPrice() {
         return price;
@@ -49,6 +62,11 @@ public class Order {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    // Devolver Direccion
+    public String getCustomAddress() {
+        return "La direccion de la Orden es: " + this.address;
     }
 
     public String getCustomer() {

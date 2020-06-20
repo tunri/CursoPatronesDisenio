@@ -52,7 +52,10 @@ public class OrderItemPromocion implements IOrderItem {
     @Override
     public void setOrder(Order order) {
         // TODO Auto-generated method stub
-
     }
     
+    @Override
+    public Double getTaxItem(Double price) {
+        return price * 0.15;
+    }
 }

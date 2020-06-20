@@ -20,4 +20,7 @@ public interface IOrderItem {
 
     public Double getPrice();
 
+    // impuesto
+    public Double getTaxItem(Double price);
+
 }

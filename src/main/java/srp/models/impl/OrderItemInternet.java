@@ -47,5 +47,10 @@ public class OrderItemInternet implements IOrderItem {
         // TODO Auto-generated method stub
 
     }
-    
+
+    @Override
+    public Double getTaxItem(Double price) {
+        return price * 0.18;
+    }
+
 }
