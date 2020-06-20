@@ -7,10 +7,11 @@ import io.javalin.plugin.openapi.OpenApiPlugin;
 import io.javalin.plugin.openapi.ui.SwaggerOptions;
 import io.swagger.v3.oas.models.info.Info;
 import srp.config.DBConnectionManager;
-
+import srp.controllers.CategoryController;
 import srp.controllers.CustomerController;
 import srp.controllers.OrderController;
 import srp.controllers.ProductController;
+import srp.controllers.FamilyController;
 
 import srp.repositories.impl.*;
 
@@ -19,6 +20,8 @@ public class App {
     private final CustomerController customerController;
     private final OrderController orderController;
     private final ProductController productController;
+    private final CategoryController categoryController;
+    private final FamilyController familyController;
 
     public App() {
         this.manager = new DBConnectionManager();
@@ -31,7 +34,12 @@ public class App {
 
         ProductRepositoryImpl productRepositoryImpl = new ProductRepositoryImpl(this.manager.getDatabase());
         this.productController = new ProductController((productRepositoryImpl));
+
+        CategoryRepositoryImpl categoryRepositoryImpl = new CategoryRepositoryImpl(this.manager.getDatabase());
+        this.categoryController = new CategoryController((categoryRepositoryImpl));
         
+        FamilyRepositoryImpl familyRepositoryImpl = new FamilyRepositoryImpl(this.manager.getDatabase());
+        this.familyController = new FamilyController((familyRepositoryImpl));
 
     }
 
@@ -69,6 +77,18 @@ public class App {
         server.delete("api/product/:id", this.productController::delete);
         server.get("api/products", this.productController::findAll);
         server.post("api/product", this.productController::create);
+
+         // METHODS CATEGORYS
+         server.get("api/category/:id", this.categoryController::find);
+         server.delete("api/category/:id", this.categoryController::delete);
+         server.get("api/categorys", this.categoryController::findAll);
+         server.post("api/category", this.categoryController::create);
+
+         // METHODS CATEGORYS
+         server.get("api/family/:id", this.familyController::find);
+         server.delete("api/family/:id", this.familyController::delete);
+         server.get("api/familys", this.familyController::findAll);
+         server.post("api/family", this.familyController::create);
 
         server.get("/hello", ctx -> ctx.html("Hello, Javalin!"));
 

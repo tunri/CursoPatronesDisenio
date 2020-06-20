@@ -6,10 +6,28 @@ public class Product {
     private String name;
     private String address;
     private Category category;
+    private String category_id;
     private Family family;
+    private String family_id;
 
     public Family getFamily() {
         return family;
+    }
+
+    public String getFamily_id() {
+        return family_id;
+    }
+
+    public void setFamily_id(String family_id) {
+        this.family_id = family_id;
+    }
+
+    public String getCategory_id() {
+        return category_id;
+    }
+
+    public void setCategory_id(String category_id) {
+        this.category_id = category_id;
     }
 
     public void setFamily(Family family) {
