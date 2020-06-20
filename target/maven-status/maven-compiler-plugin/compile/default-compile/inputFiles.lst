@@ -1,8 +1,12 @@
 /home/jerson/Development/Universidad/CursoPatronesDisenio/src/main/java/srp/models/impl/OrderItemPromocion.java
+/home/jerson/Development/Universidad/CursoPatronesDisenio/src/main/java/srp/repositories/impl/ProductRepositoryImpl.java
+/home/jerson/Development/Universidad/CursoPatronesDisenio/src/main/java/srp/models/Family.java
 /home/jerson/Development/Universidad/CursoPatronesDisenio/src/main/java/srp/App.java
+/home/jerson/Development/Universidad/CursoPatronesDisenio/src/main/java/srp/models/Category.java
 /home/jerson/Development/Universidad/CursoPatronesDisenio/src/main/java/srp/models/Product.java
 /home/jerson/Development/Universidad/CursoPatronesDisenio/src/main/java/srp/models/Order.java
 /home/jerson/Development/Universidad/CursoPatronesDisenio/src/main/java/srp/utils/OrderCourierDispatcher.java
+/home/jerson/Development/Universidad/CursoPatronesDisenio/src/main/java/srp/repositories/ProductRepository.java
 /home/jerson/Development/Universidad/CursoPatronesDisenio/src/main/java/srp/models/interfaces/IOrderItem.java
 /home/jerson/Development/Universidad/CursoPatronesDisenio/src/main/java/srp/repositories/impl/CustomerRepositoryImpl.java
 /home/jerson/Development/Universidad/CursoPatronesDisenio/src/main/java/srp/config/DBConnectionManager.java
@@ -14,3 +18,4 @@
 /home/jerson/Development/Universidad/CursoPatronesDisenio/src/main/java/srp/models/impl/OrderItemInternet.java
 /home/jerson/Development/Universidad/CursoPatronesDisenio/src/main/java/srp/repositories/OrderRepository.java
 /home/jerson/Development/Universidad/CursoPatronesDisenio/src/main/java/srp/controllers/CustomerController.java
+/home/jerson/Development/Universidad/CursoPatronesDisenio/src/main/java/srp/controllers/ProductController.java

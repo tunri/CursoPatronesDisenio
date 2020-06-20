@@ -10,6 +10,7 @@ import srp.config.DBConnectionManager;
 
 import srp.controllers.CustomerController;
 import srp.controllers.OrderController;
+import srp.controllers.ProductController;
 
 import srp.repositories.impl.*;
 
@@ -17,6 +18,7 @@ public class App {
     private final DBConnectionManager manager;
     private final CustomerController customerController;
     private final OrderController orderController;
+    private final ProductController productController;
 
     public App() {
         this.manager = new DBConnectionManager();
@@ -26,6 +28,9 @@ public class App {
         
         OrderRepositoryImpl orderRepositoryImpl = new OrderRepositoryImpl(this.manager.getDatabase());
         this.orderController = new OrderController((orderRepositoryImpl));
+
+        ProductRepositoryImpl productRepositoryImpl = new ProductRepositoryImpl(this.manager.getDatabase());
+        this.productController = new ProductController((productRepositoryImpl));
         
 
     }
@@ -58,6 +63,12 @@ public class App {
         server.delete("api/order/:id", this.orderController::delete);
         server.get("api/orders", this.orderController::findAll);
         server.post("api/order", this.orderController::create);
+
+        // METHODS PRODUCTS
+        server.get("api/product/:id", this.productController::find);
+        server.delete("api/product/:id", this.productController::delete);
+        server.get("api/products", this.productController::findAll);
+        server.post("api/product", this.productController::create);
 
         server.get("/hello", ctx -> ctx.html("Hello, Javalin!"));
 
