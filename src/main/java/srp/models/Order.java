@@ -64,7 +64,7 @@ public class Order {
         this.address = address;
     }
 
-    // Devolver Direccion
+    // Devolver Direccion Formateada
     public String getCustomAddress() {
         return "La direccion de la Orden es: " + this.address;
     }
